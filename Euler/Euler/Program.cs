@@ -21,8 +21,33 @@ namespace Euler
             Console.Read();
             //Fib 1
           
+            //Largest palindrome product
+            Console.WriteLine("The largest 3 digit palindrone product is: " + palindromeProduct());
+            //Largest palindrome product
 
-        }
+        }//main
+
+        //palindromeProduct
+        public static string palindromeProduct()
+        {
+            var numbers = new List<int>();
+            for (int i = 999; i > 99; i--)
+            {
+                for (int j = 999; j > 99; j--)
+                {
+                    var product = i * j;
+                    var productString = product.ToString();
+                    var reversed = product.Reverse();
+                    if (product == reversed)
+                    {
+                        numbers.Add(product);
+                    }
+                }
+            }
+            return (numbers.Max());
+        
+        }//palindromeProduct
+        
 
         //Fib 1
         //Checks whether number passeed is even and returns "true" if statement is true
